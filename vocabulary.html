@@ -9,28 +9,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
     html,body{margin:0;padding:0;width:100%;overflow-x:hidden;}
-    :root{--sage-900:#4A4A4A;--sage-700:#819171;--sage-600:#9CAF88;--sage-200:#CBD5C0;--sage-100:#DFE6DA;--sage-800:#758467;}
-    body{font-family:'Montserrat',sans-serif;line-height:1.65;color:var(--sage-900);background:var(--sage-100);}
+    :root{
+      --sage-900:#4A4A4A; --sage-700:#819171; --sage-600:#9CAF88; --sage-200:#CBD5C0; --sage-100:#DFE6DA; --sage-800:#758467;
+      --header-h:64px; /* wird per JS nachgemessen */
+    }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:'Montserrat',sans-serif; line-height:1.65; color:var(--sage-900); background:var(--sage-100);
+      padding-top: var(--header-h); /* Platz für fixen Header */
+    }
     h1,h2,h3{font-family:'Playfair Display',serif;color:var(--sage-700);font-weight:700;}
     /* Cards (falls du später was ergänzt) */
     .card{ background:#fff; border:1px solid #e9e9e9; border-radius:0.75rem; padding:1.5rem; box-shadow:0 6px 18px rgba(0,0,0,.05); }
+    /* Anker-Offset (für eventuelle In-Page-Links) */
+    [data-anchor]{ scroll-margin-top: calc(var(--header-h) + 12px); }
 
-    /* ===== Vocabulary Styles (aus Hauptseite) ===== */
-    #vocabulary-guide-section .vocab-section {
+    /* ===== Vocabulary Styles ===== */
+    #vocabulary-guide-section .vocab-section{
       background:#ffffff; border-radius:0.75rem; padding:2rem; margin-bottom:2rem;
       box-shadow:0 4px 10px rgba(0,0,0,0.05);
     }
-    #vocabulary-guide-section .vocab-section h2 { font-size:2.5rem; margin-bottom:1.5rem; text-align:center; }
-    #vocabulary-guide-section .vocab-list { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; }
-    #vocabulary-guide-section .vocab-item { background-color:#F8F8F8; padding:1rem; border-radius:0.5rem; border:1px solid #e0e0e0; position:relative; }
-    #vocabulary-guide-section .vocab-item strong { color:var(--sage-600); }
-    #vocabulary-guide-section .pronunciation { font-size:0.9rem; color:#555; font-style:italic; }
-    #vocabulary-guide-section .table-container { overflow-x:auto; margin-top:1.5rem; }
-    #vocabulary-guide-section .vocab-table { width:100%; border-collapse:collapse; margin-bottom:1rem; }
-    #vocabulary-guide-section .vocab-table th, #vocabulary-guide-section .vocab-table td { border:1px solid #ddd; padding:0.75rem; text-align:left; }
-    #vocabulary-guide-section .vocab-table th { background-color:#F0F5F0; color:#1A4314; font-weight:700; }
+    #vocabulary-guide-section .vocab-section h2{ font-size:2.5rem; margin-bottom:1.5rem; text-align:center; }
+    #vocabulary-guide-section .vocab-list{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; }
+    #vocabulary-guide-section .vocab-item{ background-color:#F8F8F8; padding:1rem; border-radius:0.5rem; border:1px solid #e0e0e0; position:relative; }
+    #vocabulary-guide-section .vocab-item strong{ color:var(--sage-600); }
+    #vocabulary-guide-section .pronunciation{ font-size:0.9rem; color:#555; font-style:italic; }
+    #vocabulary-guide-section .table-container{ overflow-x:auto; margin-top:1.5rem; }
+    #vocabulary-guide-section .vocab-table{ width:100%; border-collapse:collapse; margin-bottom:1rem; }
+    #vocabulary-guide-section .vocab-table th, #vocabulary-guide-section .vocab-table td{ border:1px solid #ddd; padding:0.75rem; text-align:left; }
+    #vocabulary-guide-section .vocab-table th{ background-color:#F0F5F0; color:#1A4314; font-weight:700; }
 
     /* Audio Buttons */
     .play-audio-btn{background:none;border:none;cursor:pointer;font-size:1.25rem;color:var(--sage-700);margin-left:0.5rem;vertical-align:middle;transition:transform .1s ease;padding:0.25rem;border-radius:50%;}
@@ -42,8 +52,8 @@
 </head>
 <body>
 
-  <!-- NAV (wie travel.html, mit aktivem Vocabulary) -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b">
+  <!-- NAV (fixiert, aktiver Tab: Vocabulary) -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b">
     <nav class="max-w-6xl mx-auto px-4">
       <input id="nav-toggle" type="checkbox" class="hidden peer" />
       <div class="flex items-center justify-between py-3">
@@ -86,7 +96,7 @@
     </div>
   </section>
 
-  <!-- ===== VOCABULARY CONTENT (dein kompletter Vokabelblock) ===== -->
+  <!-- ===== VOCABULARY CONTENT ===== -->
   <section id="vocabulary-guide-section" class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
 
@@ -308,11 +318,38 @@
   <footer class="bg-[var(--sage-800)] text-white py-10 text-center">
     <div class="max-w-6xl mx-auto px-4">
       <p>&copy; 2025 Linh &amp; Duy. All rights reserved.</p>
-      <p class="mt-2">Have fun learning — gặp lại nhé! 💚</p>
+      <p class="mt-2">Have fun learning! 💚</p>
     </div>
   </footer>
 
-  <!-- Audio Script (wie im Original) -->
+  <!-- SCRIPTS -->
+  <script>
+    // Header-Höhe dynamisch in CSS-Var schreiben
+    function setHeaderHeightVar(){
+      const header = document.querySelector('header');
+      if(!header) return;
+      document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+    }
+    window.addEventListener('load', setHeaderHeightVar);
+    window.addEventListener('resize', setHeaderHeightVar);
+
+    // Schatten beim Scrollen
+    const headerEl = document.querySelector('header');
+    function onScroll(){
+      if(!headerEl) return;
+      if(window.scrollY > 2) headerEl.classList.add('shadow');
+      else headerEl.classList.remove('shadow');
+    }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+
+    // Mobile-Menü nach Klick schließen
+    document.querySelectorAll('#mobile-nav a').forEach(a=>{
+      a.addEventListener('click', ()=>{ const t=document.getElementById('nav-toggle'); if(t) t.checked=false; });
+    });
+  </script>
+
+  <!-- Audio Script (dein vorhandener TTS-Player) -->
   <script>
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const audioCache = {};
@@ -347,12 +384,8 @@
       }catch(err){ console.error(err); alert("Sorry, could not play the pronunciation. Please try again later."); }
       finally{ btn.disabled=false; icon.classList.remove('hidden'); spin.classList.add('hidden'); }
     }
-    document.addEventListener('DOMContentLoaded', ()=> {
+    document.addEventListener('DOMContentLoaded', ()=>{
       document.querySelectorAll('.play-audio-btn').forEach(b=>b.addEventListener('click', playAudio));
-      // Mobile-Menü automatisch schließen bei Klick
-      document.querySelectorAll('#mobile-nav a').forEach(a=>{
-        a.addEventListener('click', ()=>{ const t=document.getElementById('nav-toggle'); if(t) t.checked=false; });
-      });
     });
   </script>
 </body>
