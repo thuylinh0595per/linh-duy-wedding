@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Wedding in Vietnam – Linh & Duy</title>
+  <meta name="description" content="Linh & Duy are getting married! Ceremony in Hanoi on Oct 25, 2025 and afterparty in Hạ Long on Oct 28, 2025. Travel tips, schedule." />
+  <meta property="og:title" content="Linh & Duy – We're getting married!" />
+  <meta property="og:description" content="Ceremony in Hanoi (Oct 25, 2025) + afterparty in Hạ Long (Oct 28, 2025)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.pexels.com/photos/58597/pexels-photo-58597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1400" />
+  <meta name="theme-color" content="#819171" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    html, body { margin:0; padding:0; width:100%; overflow-x:hidden; }
+    :root{
+      --sage-900:#4A4A4A; --sage-700:#819171; --sage-600:#9CAF88; --sage-200:#CBD5C0; --sage-100:#DFE6DA; --sage-800:#758467;
+    }
+    html{ scroll-behavior:smooth; }
+    body{ font-family:'Montserrat',sans-serif; line-height:1.65; color:var(--sage-900); background:var(--sage-100); }
+    h1,h2,h3{ font-family:'Playfair Display',serif; color:var(--sage-700); font-weight:700; }
+    [data-anchor]{ scroll-margin-top:88px; }
+
+    .hero{ min-height:100vh; min-height:100dvh; display:grid; place-items:center; text-align:center; color:#fff;
+      background-image:linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.35)), url('https://images.pexels.com/photos/58597/pexels-photo-58597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1400');
+      background-size:cover; background-position:center; font-family:'Playfair Display',serif; }
+    .hero h1,.hero h2,.hero p{ color:#fff; }
+    .shadow-text{ text-shadow:0 2px 10px rgba(0,0,0,.35); }
+    @media (max-width:768px){ .hero,.hero-section{ background-attachment:scroll; } .hero h1{font-size:2.6rem;} .hero h2{font-size:1.4rem;} }
+    @supports (-webkit-touch-callout:none){ .hero,.hero-section{ background-attachment:scroll; } }
+
+    #countdown{ display:flex; justify-content:center; gap:1rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .cd-item{ text-align:center; background:rgba(255,255,255,.18); padding:1rem 1.25rem; border-radius:0.75rem; backdrop-filter:blur(6px); min-width:88px; }
+    .cd-item span{ font-family:'Playfair Display',serif; font-weight:700; font-size:2rem; display:block; color:#fff; }
+    .cd-item p{ margin:0; text-transform:uppercase; letter-spacing:.06em; font-size:.8rem; color:#fff; }
+    .card{ background:#fff; border:1px solid #e9e9e9; border-radius:0.75rem; padding:1.5rem; box-shadow:0 6px 18px rgba(0,0,0,.05); }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:var(--sage-700); color:#fff; padding:.9rem 1.25rem; border-radius:9999px; font-weight:700; box-shadow:0 8px 20px rgba(129,145,113,.35); transition:transform .15s, background .2s; }
+    .btn:hover{ background:var(--sage-600); transform:translateY(-2px); }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b">
+    <nav class="max-w-6xl mx-auto px-4">
+      <input id="nav-toggle" type="checkbox" class="hidden peer" />
+      <div class="flex items-center justify-between py-3">
+        <!-- Hamburger -->
+        <label for="nav-toggle" class="md:hidden p-2 rounded-md border cursor-pointer select-none" aria-label="Menü öffnen/schließen" aria-controls="mobile-nav">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </label>
+        <!-- Desktop-Menü -->
+        <ul class="hidden md:flex flex-wrap items-center justify-center gap-2">
+          <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#events">Wedding Day</a></li>
+          <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#afterparty">Afterparty</a></li>
+          <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="travel.html">Travel</a></li>
+          <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="guide.html">Vietnam Guide</a></li>
+          <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="food.html">Food Guide</a></li>
+          <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="vocabulary.html">Vocabulary</a></li>
+          <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Mobile-Menü -->
+      <div id="mobile-nav" class="md:hidden hidden peer-checked:block border-t bg-white/95">
+        <ul class="flex flex-col py-2">
+          <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#events">Wedding Day</a></li>
+          <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#afterparty">Afterparty</a></li>
+          <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="travel.html">Travel</a></li>
+          <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="guide.html">Vietnam Guide</a></li>
+          <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="food.html">Food Guide</a></li>
+          <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="vocabulary.html">Vocabulary</a></li>
+          <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="px-4 max-w-4xl">
+      <h1 class="shadow-text text-5xl sm:text-6xl font-bold">Linh & Duy</h1>
+      <h2 class="shadow-text text-2xl sm:text-3xl mt-2">are getting married!</h2>
+      <p class="shadow-text text-lg sm:text-xl mt-2">October 25, 2025 · Hanoi, Vietnam</p>
+      <div id="countdown" aria-live="polite" class="mt-6" title="Countdown to the ceremony in Vietnam time"></div>
+    </div>
+  </section>
+
+  <!-- EVENTS (Wedding Day + Afterparty) -->
+  <section id="events" data-anchor class="py-16 bg-[var(--sage-200)]">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-center text-4xl mb-10">Our Celebrations</h2>
+
+      <article class="card mb-8" aria-labelledby="wed-title">
+        <h3 id="wed-title" class="text-3xl text-[var(--sage-700)]">The Wedding Day</h3>
+        <div class="mt-3 space-y-3">
+          <p class="text-gray-700">
+            <strong>Location:</strong>
+            <a class="underline text-[var(--sage-700)]" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/7EH5RYmL2kqfZmhs9">
+              Star Galaxy Wedding Center, Hanoi
+            </a>
+          </p>
+          <p class="font-semibold text-[var(--sage-600)]">Saturday, October 25, 2025</p>
+        </div>
+        <p class="mt-4"><strong>Dress code:</strong> Formal Attire</p>
+        <ul class="list-none mt-3 text-gray-700">
+          <li><strong>10:30 – 11:00 AM:</strong> Guests arrive and mingle, finding their seats at the beautiful wedding center.</li>
+          <li><strong>11:30 AM:</strong> The ceremony begins, followed by a festive lunch.</li>
+          <li><strong>1:00 PM:</strong> The celebration concludes. Time for the bride and groom to eat!</li>
+        </ul>
+        <p class="mt-4 text-gray-700">
+          Get ready for a wedding with pho-nomenal vibes! <br>
+          In Vietnam, this wedding event is one thing above all else: Joyful! A special moment of two families coming together (+-200 other guests, or at least at our wedding).
+        </p>
+      </article>
+
+      <article id="afterparty" data-anchor class="card" aria-labelledby="after-title">
+        <h3 id="after-title" class="text-3xl text-[var(--sage-700)]">The Afterparty</h3>
+        <div class="mt-3 space-y-3">
+          <p class="text-gray-700">
+            <strong>Location:</strong>
+            <a class="underline text-[var(--sage-700)]" target="_blank" rel="noopener" href="https://maps.app.goo.gl/sQWkaUGpT5xRC1TcA">Victoria Villas - Tuần Châu, Hạ Long</a>
+          </p>
+          <p class="font-semibold text-[var(--sage-600)]">Tuesday, October 28, 2025</p>
+          <p><strong>Dress code:</strong> Beach Wedding Attire</p>
+          <p class="text-sm text-gray-600 italic">
+            Kindly note on footwear: <br>
+            The Ceremony + Vows will be celebrated directly on sand, so comfortable flats, elegant sandals, or heels up to 3cm are recommended. Dinner will be held on grass in front of the villas, so choose footwear accordingly. 🏖️🌿
+          </p>
+        </div>
+        <ul class="list-none mt-3 text-gray-700">
+          <li><strong>9:00 AM:</strong> Our bus from Hanoi’s ready — join everyone or make your own adventure! 😉 (Meeting point: tba)</li>
+          <li><strong>12:00 PM:</strong> Check-in at Victoria Villas - Welcome to your (hopefully fancy) dorm!</li>
+          <li class="mt-2 mb-2"><strong> After Check-in = Idle time:</strong> Free time to rest, enjoy the pool or beach, and lunch, whenever you feel like it.</li>
+          <li><strong>4:00 PM:</strong> Kicking off the event w/ Drinks, Coffee, and Snacks - Get ready for: Team Bride vs Team Groom.</li>
+          <li><strong>5:00 PM:</strong> The “I promise” part… try not to cry too much (ar at least pretend)).</li>
+          <li><strong>6:00 PM:</strong> Time to mingle with a lot of hugging, chatting and photos.</li>
+          <li><strong>7:00 PM:</strong> Dinner, great stories, and games to keep the laughs going. </li>
+          <li><strong>9:00 PM - 1:00 AM:</strong> Music up, shoes off, and dance like nobody’s watching!</li>
+        </ul>
+        <h4 class="font-semibold text-[var(--sage-700)] mt-6">Wednesday, October 29, 2025</h4>
+        <ul class="list-none mt-3 text-gray-700">
+          <li><strong>9:00 AM:</strong> Good morning to breakfast with beautiful people & Check-out.</li>
+          <li><strong>11:00 AM:</strong> It is time for our bus to take us back to Hanoi.</li>
+        </ul>
+        <p class="mt-4 text-gray-700">
+          <strong>Important Information for the Afterparty:</strong> We are delighted to cover the one-night accommodation (October 28-29), round-trip bus transport from and back to Hanoi, and all food and drinks during the afterparty. A separate form will be sent to confirm your attendance and travel preferences.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" data-anchor class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-center text-4xl mb-10">People you can always contact </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div class="text-center">
+          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow" src="https://placehold.co/200x200/F0F0E0/819171" alt="David Smith, Best Man" />
+          <h3 class="text-2xl text-[var(--sage-700)] mt-2">Eric Nguyen <br> Best Man</h3>
+        </div>
+        <div class="text-center">
+          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow" src="https://placehold.co/200x200/E8E3D8/819171" alt="Michael Johnson, Best Man" />
+          <h3 class="text-2xl text-[var(--sage-700)] mt-2">Haris Ceribasic <br> Best Man</h3>
+        </div>
+        <div class="text-center">
+          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow" src="https://placehold.co/200x200/F0F0E0/819171" alt="Sarah Lee, Maid of Honor" />
+          <h3 class="text-2xl text-[var(--sage-700)] mt-2">Linh Khanh Nguyen <br> Maid of Honor</h3>
+        </div>
+        <div class="text-center">
+          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow" src="https://placehold.co/200x200/E8E3D8/819171" alt="Emily Chen, Maid of Honor" />
+          <h3 class="text-2xl text-[var(--sage-700)] mt-2">Wejdene Mansour <br> Maid of Honor</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[var(--sage-800)] text-white py-10 text-center">
+    <div class="max-w-6xl mx-auto px-4">
+      <p>&copy; 2025 Linh &amp; Duy. All rights reserved.</p>
+      <p class="mt-2"> See u around - happy to have you guys ❤️</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: Countdown + Smooth scroll -->
+  <script>
+    const ceremonyIso = '2025-10-25T11:30:00+07:00';
+    const targetMs = Date.parse(ceremonyIso);
+    const cdEl = document.getElementById('countdown');
+    const tick = () => {
+      const now = Date.now();
+      const diff = Math.max(0, targetMs - now);
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const s = Math.floor((diff % (1000*60)) / 1000);
+      cdEl.innerHTML = diff > 0
+        ? `<div class="cd-item"><span>${d}</span><p>Days</p></div>
+           <div class="cd-item"><span>${h}</span><p>Hours</p></div>
+           <div class="cd-item"><span>${m}</span><p>Minutes</p></div>
+           <div class="cd-item"><span>${s}</span><p>Seconds</p></div>`
+        : '<p class="text-2xl font-bold">We\'re Married! 🎉</p>';
+    };
+    tick(); setInterval(tick, 1000);
+  </script>
+  <script>
+    document.addEventListener('click', function (e) {
+      const a = e.target.closest('a[href^="#"]'); if (!a) return;
+      const targetId = a.getAttribute('href'); if (!targetId || targetId.length<=1) return;
+      const el = document.querySelector(targetId); if (!el) return;
+      e.preventDefault(); const toggle=document.getElementById('nav-toggle'); const mobileNav=document.getElementById('mobile-nav'); if (toggle) toggle.checked=false;
+      const doScroll=()=>{ el.scrollIntoView({behavior:'smooth',block:'start'}); history.replaceState(null,'',targetId); };
+      const wasOpen = mobileNav && getComputedStyle(mobileNav).display!=='none';
+      if (wasOpen) { setTimeout(()=>requestAnimationFrame(doScroll),200); } else { requestAnimationFrame(doScroll); }
+    });
+  </script>
+</body>
+</html>
