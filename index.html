@@ -49,9 +49,17 @@
       <input id="nav-toggle" type="checkbox" class="hidden peer" />
       <div class="flex items-center justify-between py-3">
         <!-- Hamburger -->
-        <label for="nav-toggle" class="md:hidden p-2 rounded-md border cursor-pointer select-none" aria-label="Menü öffnen/schließen" aria-controls="mobile-nav">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <label for="nav-toggle"
+            class="md:hidden flex items-center gap-2 p-2 rounded-md border cursor-pointer select-none"
+            aria-label="Menü öffnen/schließen" aria-controls="mobile-nav">
+        <!-- Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <!-- EIN WORT: -->
+        <span class="text-sm font-semibold text-[var(--sage-700)]">Menü</span>
         </label>
+
         <!-- Desktop-Menü -->
         <ul class="hidden md:flex flex-wrap items-center justify-center gap-2">
           <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#events">Wedding Day</a></li>
@@ -64,7 +72,10 @@
         </ul>
       </div>
       <!-- Mobile-Menü -->
-      <div id="mobile-nav" class="md:hidden hidden peer-checked:block border-t bg-white/95">
+      <div id="mobile-nav"
+        class="md:hidden hidden peer-checked:block border-t bg-white/95
+                max-h-[calc(100dvh-var(--header-h))] overflow-y-auto">
+
         <ul class="flex flex-col py-2">
           <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#events">Wedding Day</a></li>
           <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#afterparty">Afterparty</a></li>
