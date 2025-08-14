@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Our Wedding in Vietnam – Linh & Duy</title>
   <meta name="description" content="Linh & Duy are getting married! Ceremony in Hanoi on Oct 25, 2025 and afterparty in Hạ Long on Oct 28, 2025. Travel tips, schedule." />
+
+  <!-- Open Graph (use ABSOLUTE URL after deploy, e.g. https://your-domain.com/assets/img/og.jpg) -->
   <meta property="og:title" content="Linh & Duy – We're getting married!" />
   <meta property="og:description" content="Ceremony in Hanoi (Oct 25, 2025) + afterparty in Hạ Long (Oct 28, 2025)." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.pexels.com/photos/58597/pexels-photo-58597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1400" />
+  <meta property="og:image" content="assets/hero.jpeg" />
+
   <meta name="theme-color" content="#819171" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Optional: preload hero image for faster first paint -->
+  <link rel="preload" as="image" href="assets/hero.jpg" />
+
   <style>
     html, body { margin:0; padding:0; width:100%; overflow-x:hidden; }
     :root{
@@ -25,9 +31,14 @@
     h1,h2,h3{ font-family:'Playfair Display',serif; color:var(--sage-700); font-weight:700; }
     [data-anchor]{ scroll-margin-top: calc(var(--header-h) + 12px); }
 
-    .hero{ min-height:100vh; min-height:100dvh; display:grid; place-items:center; text-align:center; color:#fff;
-      background-image:linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.35)), url('https://images.pexels.com/photos/58597/pexels-photo-58597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1400');
-      background-size:cover; background-position:center; font-family:'Playfair Display',serif; }
+    .hero{
+      min-height:100vh; min-height:100dvh; display:grid; place-items:center; text-align:center; color:#fff;
+      /* LOCAL hero image */
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.35)),
+        url('assets/hero.jpeg');
+      background-size:cover; background-position:center; font-family:'Playfair Display',serif;
+    }
     .hero h1,.hero h2,.hero p{ color:#fff; }
     .shadow-text{ text-shadow:0 2px 10px rgba(0,0,0,.35); }
     @media (max-width:768px){ .hero,.hero-section{ background-attachment:scroll; } .hero h1{font-size:2.6rem;} .hero h2{font-size:1.4rem;} }
@@ -44,20 +55,18 @@
 </head>
 <body>
   <!-- NAV -->
-<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b">
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b">
     <nav class="max-w-6xl mx-auto px-4">
       <input id="nav-toggle" type="checkbox" class="hidden peer" />
       <div class="flex items-center justify-between py-3">
         <!-- Hamburger -->
         <label for="nav-toggle"
-            class="md:hidden flex items-center gap-2 p-2 rounded-md border cursor-pointer select-none"
-            aria-label="Menü öffnen/schließen" aria-controls="mobile-nav">
-        <!-- Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          class="md:hidden flex items-center gap-2 p-2 rounded-md border cursor-pointer select-none"
+          aria-label="Menü öffnen/schließen" aria-controls="mobile-nav">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <!-- EIN WORT: -->
-        <span class="text-sm font-semibold text-[var(--sage-700)]">Menü</span>
+          </svg>
+          <span class="text-sm font-semibold text-[var(--sage-700)]">Menü</span>
         </label>
 
         <!-- Desktop-Menü -->
@@ -75,7 +84,6 @@
       <div id="mobile-nav"
         class="md:hidden hidden peer-checked:block border-t bg-white/95
                 max-h-[calc(100dvh-var(--header-h))] overflow-y-auto">
-
         <ul class="flex flex-col py-2">
           <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#events">Wedding Day</a></li>
           <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#afterparty">Afterparty</a></li>
@@ -169,19 +177,23 @@
       <h2 class="text-center text-4xl mb-10">People you can always contact </h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
         <div class="text-center">
-          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow" src="https://placehold.co/200x200/F0F0E0/819171" alt="David Smith, Best Man" />
+          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow"
+               src="assets/contact-wejdene.jpg" alt="Eric Nguyen, Best Man" />
           <h3 class="text-2xl text-[var(--sage-700)] mt-2">Eric Nguyen <br> Best Man</h3>
         </div>
         <div class="text-center">
-          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow" src="https://placehold.co/200x200/E8E3D8/819171" alt="Michael Johnson, Best Man" />
+          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow"
+               src="assets/contact-wejdene.jpg" alt="Haris Ceribasic, Best Man" />
           <h3 class="text-2xl text-[var(--sage-700)] mt-2">Haris Ceribasic <br> Best Man</h3>
         </div>
         <div class="text-center">
-          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow" src="https://placehold.co/200x200/F0F0E0/819171" alt="Sarah Lee, Maid of Honor" />
+          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow"
+               src="assets/contact-wejdene.jpg" alt="Linh Khanh Nguyen, Maid of Honor" />
           <h3 class="text-2xl text-[var(--sage-700)] mt-2">Linh Khanh Nguyen <br> Maid of Honor</h3>
         </div>
         <div class="text-center">
-          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow" src="https://placehold.co/200x200/E8E3D8/819171" alt="Emily Chen, Maid of Honor" />
+          <img class="w-36 h-36 rounded-full object-cover border-4 border-[var(--sage-600)] mx-auto shadow"
+               src="assets/contact-wejdene.jpg" alt="Wejdene Mansour, Maid of Honor" />
           <h3 class="text-2xl text-[var(--sage-700)] mt-2">Wejdene Mansour <br> Maid of Honor</h3>
         </div>
       </div>
@@ -229,7 +241,7 @@
     });
   </script>
   <script>
-    // Header-Höhe in CSS-Variable schreiben (nutzt du für body padding & Anker-Offset)
+    // Header-Höhe in CSS-Variable schreiben
     function setHeaderHeightVar() {
       const header = document.querySelector('header');
       if (!header) return;
@@ -239,7 +251,7 @@
     window.addEventListener('load', setHeaderHeightVar);
     window.addEventListener('resize', setHeaderHeightVar);
 
-    // Optional: dezenter Schatten, sobald gescrollt wird
+    // Optional: Schatten beim Scroll
     const headerEl = document.querySelector('header');
     function onScroll() {
       if (!headerEl) return;
@@ -247,7 +259,7 @@
       else headerEl.classList.remove('shadow');
     }
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // initial setzen
+    onScroll();
   </script>
 </body>
 </html>
