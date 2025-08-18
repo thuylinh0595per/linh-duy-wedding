@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Food Guide – Linh & Duy</title>
+  <title>Food & Drinks Guide – Linh & Duy</title>
   <meta name="theme-color" content="#819171" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,7 +27,7 @@
 
     .card{ background:#fff; border:1px solid #e9e9e9; border-radius:0.75rem; padding:1.5rem; box-shadow:0 6px 18px rgba(0,0,0,.05); }
 
-    /* Food Guide Specific Styles (wie Original) */
+    /* Food & Drinks items */
     #food-guide-section .food-item { background:#ffffff;border-radius:0.75rem;padding:2rem;margin-bottom:2rem;box-shadow:0 4px 10px rgba(0,0,0,0.05);display:flex;flex-direction:column;align-items:center;text-align:center; }
     #food-guide-section .food-item img { width:100%;max-width:400px;height:250px;border-radius:0.5rem;margin-bottom:1.5rem;object-fit:cover; }
     #food-guide-section .food-item h3 { font-size:2.25rem;margin-bottom:0.75rem; }
@@ -49,15 +49,15 @@
       <input id="nav-toggle" type="checkbox" class="hidden peer" />
       <div class="flex items-center justify-between py-3">
         <label for="nav-toggle"
-       class="md:hidden flex items-center gap-2 p-2 rounded-md border cursor-pointer select-none"
-        aria-label="Menü öffnen/schließen" aria-controls="mobile-nav">
-    <!-- Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-    <!-- EIN WORT: -->
-    <span class="text-sm font-semibold text-[var(--sage-700)]">Menü</span>
-    </label>
+          class="md:hidden flex items-center gap-2 p-2 rounded-md border cursor-pointer select-none"
+          aria-label="Menü öffnen/schließen" aria-controls="mobile-nav">
+          <!-- Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <!-- EIN WORT: -->
+          <span class="text-sm font-semibold text-[var(--sage-700)]">Menü</span>
+        </label>
 
         <ul class="hidden md:flex flex-wrap items-center justify-center gap-2">
           <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="index.html#events">Wedding Day</a></li>
@@ -83,18 +83,18 @@
     </nav>
   </header>
 
-  <!-- FOOD -->
+  <!-- FOOD & DRINKS -->
   <main id="food-guide-section" data-anchor class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-center text-4xl mb-12">Delicious Vietnamese Food</h2>
+      <h2 class="text-center text-4xl mb-12">Vietnamese Food & Drinks</h2>
       <p class="text-center text-lg mb-8">
-        Vietnam's cuisine is a highlight of any visit! Here are some must-try dishes and what to expect.
-        <br>When eating out, remember that while many dishes can be made vegetarian (simply ask for "chay"), <strong>fish sauce (nước mắm)</strong> is a very common ingredient. Don't hesitate to ask: "<strong>Không nước mắm</strong>" (no fish sauce) if needed!
+        Vietnam's cuisine is a highlight of any visit — from iconic street food to refreshing drinks and bold coffee classics.
+        <br>Many dishes can be made vegetarian (ask for <strong>"chay"</strong>), and <strong>fish sauce (nước mắm)</strong> is very common — so feel free to say <strong>"Không nước mắm"</strong> (no fish sauce) if needed!
       </p>
 
-      <!-- Food-Items (wie Original) -->
+      <!-- Dishes -->
       <div class="food-item">
-        <img src="assets/pho.jpg" alt="Photo of Pho">
+        <img src="assets/pho.jpg" alt="Photo of Phở">
         <div class="text-content">
           <h3>Phở 🍜</h3>
           <p>An aromatic and hearty noodle soup with rice noodles, broth (usually beef or chicken), herbs, and meat (beef, chicken, or tofu). It's light, filling, and full of flavor. A national dish you simply must try!</p>
@@ -103,7 +103,7 @@
       </div>
 
       <div class="food-item">
-        <img src="assets\banh-mi.jpeg" alt="Photo of Banh Mi">
+        <img src="assets/banh-mi.jpeg" alt="Photo of Bánh Mì">
         <div class="text-content">
           <h3>Bánh Mì 🥖</h3>
           <p>A crispy baguette filled with ingredients like grilled meat, pickled vegetables, cilantro, chili, and mayonnaise or liver pâté. A perfect, portable snack with a great variety of textures and flavors. For vegetarians simply ask for options like tofu or omelette.</p>
@@ -112,7 +112,7 @@
       </div>
 
       <div class="food-item">
-        <img src="assets\goi-cuon.jpg" alt="Photo of Gỏi Cuốn">
+        <img src="assets/goi-cuon.jpg" alt="Photo of Gỏi Cuốn">
         <div class="text-content">
           <h3>Gỏi Cuốn (Fresh Spring Rolls) 🦐</h3>
           <p>Fresh, non-fried rice paper rolls filled with rice vermicelli, shrimp or tofu, fresh herbs, lettuce, and often thin slices of pork. They are light, refreshing, and healthy. Perfect with peanut sauce!</p>
@@ -121,16 +121,16 @@
       </div>
 
       <div class="food-item">
-        <img src="assets\bun.jpg" alt="Photo of Bún Chả">
+        <img src="assets/bun.jpg" alt="Photo of Bún Chả">
         <div class="text-content">
           <h3>Bún Chả 🍖</h3>
           <p>Grilled marinated pork (often as small patties and slices) served with cold rice vermicelli noodles (Bun), fresh herbs, and a sweet and sour fish sauce for dipping. A Hanoi specialty!</p>
-          <p class="cost">Estimated Cost: 40,000 - 80,000 VND / 1,30 - 2,60€</p>
+        <p class="cost">Estimated Cost: 40,000 - 80,000 VND / 1,30 - 2,60€</p>
         </div>
       </div>
 
       <div class="food-item">
-        <img src="assets\banh-xeo.jpg" alt="Photo of Bánh Xèo">
+        <img src="assets/banh-xeo.jpg" alt="Photo of Bánh Xèo">
         <div class="text-content">
           <h3>Bánh Xèo 🥞</h3>
           <p>A crispy, yellow crepe made from rice flour, turmeric, and coconut milk, filled with bean sprouts, shrimp, pork, and onions. It is wrapped in lettuce leaves and dipped in a sweet and sour fish sauce. A delightful crunch!</p>
@@ -139,7 +139,7 @@
       </div>
 
       <div class="food-item">
-        <img src="assets\banh-cuon.jpg" alt="Photo of Bánh Cuốn">
+        <img src="assets/banh-cuon.jpg" alt="Photo of Bánh Cuốn">
         <div class="text-content">
           <h3>Bánh Cuốn</h3>
           <p>Thin, silky, steamed rice flour rolls filled with minced mushrooms and ground pork. They are served with crispy fried shallots, fresh herbs, and a light fish sauce. A delicate and savory breakfast or snack.</p>
@@ -148,7 +148,7 @@
       </div>
 
       <div class="food-item">
-        <img src="assets\bun-bo-hue.jpg" alt="Photo of Bún Bò Huế">
+        <img src="assets/bun-bo-hue.jpg" alt="Photo of Bún Bò Huế">
         <div class="text-content">
           <h3>Bún Bò Huế 🍜</h3>
           <p>A spicy beef noodle soup characterized by its rich broth with lemongrass and chili, rice noodles, and beef. A flavorful experience for lovers of spicy and aromatic soups, originating from Hue.</p>
@@ -157,21 +157,103 @@
       </div>
 
       <div class="food-item">
-        <!-- Ersetze hier im Projekt wieder deinen vollen Base64-String -->
-        <img src="assets\bun-bo-nam-bo.png" alt="Photo of Bún bò nam bộ">
+        <img src="assets/bun-bo-nam-bo.png" alt="Photo of Bún bò nam bộ">
         <div class="text-content">
           <h3>Bún bò nam bộ</h3>
           <p>A refreshing noodle salad bowl with warm rice vermicelli (Bun), marinated and stir-fried beef, fresh herbs, lettuce, peanuts, and fried shallots, topped with a sweet and sour fish sauce. A delightful fresh alternative to soup.</p>
-          <p class="cost">Estimated Cost: 45,000 - 80,000 VND / 1,50 - 2,60€ </p>
+          <p class="cost">Estimated Cost: 45,000 - 80,000 VND / 1,50 - 2,60€</p>
         </div>
       </div>
 
       <div class="food-item">
-        <img src="assets\che.jpg" alt="Photo of Chè">
+        <img src="assets/che.jpg" alt="Photo of Chè dessert">
         <div class="text-content">
           <h3>Chè</h3>
           <p>A diverse category of Vietnamese desserts. These can be sweet soups, puddings, or drinks, often containing coconut milk, beans, jellies, tapioca pearls, fruits, and sticky rice. A perfect sweet treat!</p>
           <p class="cost">Estimated Cost: 15,000 - 40,000 VND / 0,50 - 1,30€</p>
+        </div>
+      </div>
+
+      <!-- DRINKS -->
+      <h2 class="text-center text-3xl mt-14 mb-8">Refreshing Drinks & Coffee (Đồ uống)</h2>
+
+      <div class="food-item">
+        <img src="assets/drinks/ca-phe-sua-da.jpg" alt="Cà phê sữa đá (iced coffee with condensed milk)">
+        <div class="text-content">
+          <h3>Cà phê sữa đá</h3>
+          <p>The classic: strong-brewed Robusta + sweet condensed milk + ice. Ubiquitous, bold & sweet — Vietnam in a glass.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/ca-phe-trung.jpg" alt="Cà phê trứng (egg coffee)">
+        <div class="text-content">
+          <h3>Cà phê trứng</h3>
+          <p>Silky, dessert-like mix of egg yolk, sugar, condensed milk and hot coffee. Originally from Hanoi — tastes like tiramisu in a cup.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/sinh-to.jpg" alt="Sinh tố smoothies">
+        <div class="text-content">
+          <h3>Sinh tố</h3>
+          <p>Fresh fruit smoothies, often blended with ice & milk or yogurt. Favourites: mango, avocado, dragon fruit — tropical, cool & creamy.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/tra-da.jpg" alt="Trà đá (iced tea)">
+        <div class="text-content">
+          <h3>Trà đá</h3>
+          <p>Chilled green tea, usually unsweetened. Often served free in local eateries — light and super thirst-quenching.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/nuoc-mia.jpg" alt="Nước mía (sugarcane juice)">
+        <div class="text-content">
+          <h3>Nước mía</h3>
+          <p>Freshly pressed sugarcane over ice, sometimes with a squeeze of kumquat. Lightly sweet and very refreshing.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/dua-tuoi.jpg" alt="Dừa tươi (fresh coconut)">
+        <div class="text-content">
+          <h3>Dừa tươi</h3>
+          <p>Ice-cold coconut served straight from the green shell. Naturally sweet and ultra-hydrating — perfect in the heat!</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/ca-phe-dua.jpg" alt="Cà phê dừa (coconut coffee)">
+        <div class="text-content">
+          <h3>Cà phê dừa</h3>
+          <p>Iced coffee blended with creamy coconut milk/ice. Tropical, sweet, refreshing — a modern favourite on hot days.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/bac-xiu.jpg" alt="Bạc xỉu (milky coffee)">
+        <div class="text-content">
+          <h3>Bạc xỉu</h3>
+          <p>“Milk with a hint of coffee”: the inverse latte. Mild and sweet — great if you like coffee on the gentle side.</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/pine-sea.jpg" alt="Pine Sea (pineapple juice + cold brew)">
+        <div class="text-content">
+          <h3>Pine Sea</h3>
+          <p>Pineapple juice + cold brew coffee — a fun, bright combo you’ll see in some cafés (e.g., Hanoi specialty bars).</p>
+        </div>
+      </div>
+
+      <div class="food-item">
+        <img src="assets/drinks/tra-chanh.jpg" alt="Trà chanh (lemon tea)">
+        <div class="text-content">
+          <h3>Trà chanh</h3>
+          <p>Freshly squeezed lemon with green tea and a touch of sugar. Zesty, refreshing and perfect for hot afternoons.</p>
         </div>
       </div>
     </div>
