@@ -227,8 +227,8 @@
             <p class="pronunciation">(ngon" (ng wie in "singen"))</p>
           </div>
           <div class="vocab-item">
-            <p><strong>I am vegetarian:</strong> tôi ăn cháy
-              <button class="play-audio-btn" data-text="tôi ăn cháy" aria-label="Play pronunciation"><span class="audio-icon">&#x1F50A;</span><span class="loading-spinner hidden"></span></button>
+            <p><strong>I am vegetarian:</strong> tôi ăn chay
+              <button class="play-audio-btn" data-text="tôi ăn chay" aria-label="Play pronunciation"><span class="audio-icon">&#x1F50A;</span><span class="loading-spinner hidden"></span></button>
             </p>
             <p class="pronunciation">(toi an tschai)</p>
           </div>
@@ -304,7 +304,7 @@
               <tr><th>Phrase</th><th>Vietnamese</th><th>Pronunciation</th><th>Listen</th></tr>
             </thead>
             <tbody>
-              <tr><td>How much does it cost?</td><td>giá bao nhiêu ?</td><td>(sa bau nio)</td><td><button class="play-audio-btn" data-text="giá bảo nhiều" aria-label="Play pronunciation"><span class="audio-icon">&#x1F50A;</span><span class="loading-spinner hidden"></span></button></td></tr>
+              <tr><td>How much does it cost?</td><td>giá bao nhiêu ?</td><td>(sa bau nio)</td><td><button class="play-audio-btn" data-text="giá bao nhiêu" aria-label="Play pronunciation"><span class="audio-icon">&#x1F50A;</span><span class="loading-spinner hidden"></span></button></td></tr>
               <tr><td>It is too expensive</td><td>Đắt quá !</td><td>(dat kwa)</td><td><button class="play-audio-btn" data-text="Đắt quá" aria-label="Play pronunciation"><span class="audio-icon">&#x1F50A;</span><span class="loading-spinner hidden"></span></button></td></tr>
               <tr><td>Can you lower the price?</td><td>Hạ giá được không ?</td><td>(ha sa dürk khong)</td><td><button class="play-audio-btn" data-text="Hạ giá được không" aria-label="Play pronunciation"><span class="audio-icon">&#x1F50A;</span><span class="loading-spinner hidden"></span></button></td></tr>
               <tr><td>That one!</td><td>Cái này !</td><td>(Kai nai)</td><td><button class="play-audio-btn" data-text="Cái này" aria-label="Play pronunciation"><span class="audio-icon">&#x1F50A;</span><span class="loading-spinner hidden"></span></button></td></tr>
@@ -355,44 +355,83 @@
     });
   </script>
 
-  <!-- Audio Script (dein vorhandener TTS-Player) -->
-  <script>
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const audioCache = {};
-    function base64ToArrayBuffer(base64){const b=window.atob(base64);const len=b.length;const bytes=new Uint8Array(len);for(let i=0;i<len;i++)bytes[i]=b.charCodeAt(i);return bytes.buffer;}
-    function pcmToWav(pcmData,sampleRate){const numChannels=1,bitsPerSample=16,byteRate=sampleRate*numChannels*(bitsPerSample/8),blockAlign=numChannels*(bitsPerSample/8);const wavBuffer=new ArrayBuffer(44+pcmData.byteLength);const view=new DataView(wavBuffer);writeString(view,0,'RIFF');view.setUint32(4,36+pcmData.byteLength,true);writeString(view,8,'WAVE');writeString(view,12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,numChannels,true);view.setUint32(24,sampleRate,true);view.setUint32(28,byteRate,true);view.setUint16(32,blockAlign,true);view.setUint16(34,bitsPerSample,true);writeString(view,36,'data');view.setUint32(40,pcmData.byteLength,true);const pcm16=new Int16Array(pcmData);for(let i=0;i<pcm16.length;i++)view.setInt16(44+i*2,pcm16[i],true);return new Blob([view],{type:'audio/wav'});}
-    function writeString(view,offset,string){for(let i=0;i<string.length;i++)view.setUint8(offset+i,string.charCodeAt(i));}
-    async function playAudio(e){
-      const btn=e.currentTarget;const text=btn.dataset.text;const icon=btn.querySelector('.audio-icon');const spin=btn.querySelector('.loading-spinner');if(!text)return;
-      if(audioCache[text]){new Audio(audioCache[text]).play().catch(console.error);return;}
-      btn.disabled=true;icon.classList.add('hidden');spin.classList.remove('hidden');
-      const payload={contents:[{parts:[{text:text}]}],generationConfig:{responseModalities:["AUDIO"],speechConfig:{voiceConfig:{prebuiltVoiceConfig:{voiceName:"Kore"}}}},model:"gemini-2.5-flash-preview-tts"};
-      const apiKey=""; const apiUrl=`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-      let retries=0; const maxRetries=3; const baseDelay=1000;
-      try{
-        while(retries<maxRetries){
-          try{
-            const res=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-            if(!res.ok){ if(res.status===429 && retries<maxRetries-1){const d=baseDelay*Math.pow(2,retries)+Math.random()*500; await new Promise(r=>setTimeout(r,d)); retries++; continue;} throw new Error(`HTTP ${res.status}`); }
-            const result=await res.json();
-            const part=result?.candidates?.[0]?.content?.parts?.[0];
-            const audioData=part?.inlineData?.data; const mime=part?.inlineData?.mimeType;
-            if(audioData && mime && mime.startsWith("audio/L16")){
-              const m=mime.match(/rate=(\d+)/); const sr=m?parseInt(m[1],10):16000;
-              const pcm=base64ToArrayBuffer(audioData); const wav=pcmToWav(pcm,sr);
-              const url=URL.createObjectURL(wav); audioCache[text]=url; new Audio(url).play().catch(console.error); break;
-            }else{ throw new Error("Invalid audio payload"); }
-          }catch(err){
-            if(retries===maxRetries-1) throw err;
-            const d=baseDelay*Math.pow(2,retries)+Math.random()*500; await new Promise(r=>setTimeout(r,d)); retries++;
-          }
-        }
-      }catch(err){ console.error(err); alert("Sorry, could not play the pronunciation. Please try again later."); }
-      finally{ btn.disabled=false; icon.classList.remove('hidden'); spin.classList.add('hidden'); }
-    }
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.querySelectorAll('.play-audio-btn').forEach(b=>b.addEventListener('click', playAudio));
+<script>
+(() => {
+  const synth = window.speechSynthesis;
+  let voices = [];
+
+  function loadVoices() {
+    return new Promise(resolve => {
+      // Manche Browser laden Stimmen asynchron
+      const tryLoad = () => {
+        voices = synth.getVoices();
+        if (voices.length) return resolve(voices);
+        setTimeout(tryLoad, 50);
+      };
+      tryLoad();
     });
-  </script>
+  }
+
+  function pickVietnameseVoice() {
+    // Bevorzugt vi-VN, sonst irgendeine vietnamesische Stimme,
+    // zur Not Default mit vi-VN Spracheinstellung
+    const viLang = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('vi'));
+    if (viLang) return viLang;
+    const byName = voices.find(v => /viet|việt|vietnam/i.test(v.name));
+    return byName || null;
+  }
+
+  function speak(text, btn) {
+    if (!text || !('speechSynthesis' in window)) return;
+
+    // iOS/Chrome vermeiden Queue-Stau
+    synth.cancel();
+
+    const utter = new SpeechSynthesisUtterance(text);
+    const vi = pickVietnameseVoice();
+    if (vi) utter.voice = vi;
+    utter.lang = (vi && vi.lang) || 'vi-VN';
+    utter.rate = 0.95;
+    utter.pitch = 1;
+
+    // kleines UI-Feedback (Icon ↔ Spinner)
+    const icon = btn?.querySelector('.audio-icon');
+    const spin = btn?.querySelector('.loading-spinner');
+    btn?.setAttribute('aria-busy', 'true');
+    btn?.classList.add('opacity-60');
+    if (icon && spin) { icon.classList.add('hidden'); spin.classList.remove('hidden'); }
+
+    const done = () => {
+      if (icon && spin) { icon.classList.remove('hidden'); spin.classList.add('hidden'); }
+      btn?.classList.remove('opacity-60');
+      btn?.removeAttribute('aria-busy');
+    };
+
+    utter.onend = done;
+    utter.onerror = done;
+
+    synth.speak(utter);
+  }
+
+  async function initTTS() {
+    if (!('speechSynthesis' in window)) {
+      console.warn('Web Speech API wird vom Browser nicht unterstützt.');
+      document.querySelectorAll('.play-audio-btn').forEach(b => b.disabled = true);
+      return;
+    }
+    await loadVoices();
+    document.querySelectorAll('.play-audio-btn').forEach(btn => {
+      btn.addEventListener('click', () => speak(btn.dataset.text, btn));
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTTS);
+  } else {
+    initTTS();
+  }
+})();
+</script>
+ 
 </body>
 </html>
