@@ -354,101 +354,102 @@
       </li>
     </ol>
 
-    <!-- Desktop: middle line + alternating -->
-  <div class="hidden md:grid grid-cols-2 gap-8 relative mt-10">
+  <!-- Desktop: middle line + alternating (FIXED CENTER) -->
+<div class="hidden md:block relative max-w-4xl mx-auto mt-10">
+  <!-- central line -->
+  <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded"></div>
 
-      <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded"></div>
-
-      <div class="space-y-12">
-        <!-- Row 1 (left) -->
-        <div class="relative grid grid-cols-2 gap-12 items-center">
-          <div class="text-right">
-            <p class="text-sm text-gray-500">09:00</p>
-            <p class="font-semibold">Departure (Hanoi → Hạ Long)</p>
-            <img src="assets/timeline/bus.png" alt="" class="w-8 h-8 inline-block mt-1">
-          </div>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-          <div></div>
-        </div>
-
-        <!-- Row 2 (right) -->
-        <div class="relative grid grid-cols-2 gap-12 items-center">
-          <div></div>
-          <div>
-            <p class="text-sm text-gray-500">12:00</p>
-            <p class="font-semibold">Check-in – Victoria Villas</p>
-            <img src="assets/timeline/checkin.png" alt="" class="w-8 h-8 inline-block mt-1">
-          </div>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-        </div>
-
-        <!-- Row 3 (left) -->
-        <div class="relative grid grid-cols-2 gap-12 items-center">
-          <div class="text-right">
-            <p class="text-sm text-gray-500">16:00</p>
-            <p class="font-semibold">Reception – Drinks, Coffee & Snacks</p>
-            <img src="assets/timeline/reception.png" alt="" class="w-8 h-8 inline-block mt-1">
-          </div>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-          <div></div>
-        </div>
-
-        <!-- Row 4 (right) -->
-        <div class="relative grid grid-cols-2 gap-12 items-center">
-          <div></div>
-          <div>
-            <p class="text-sm text-gray-500">17:00</p>
-            <p class="font-semibold">Ceremony</p>
-            <img src="assets/timeline/ceremony.png" alt="" class="w-8 h-8 inline-block mt-1">
-          </div>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-        </div>
-
-        <!-- Row 5 (left) -->
-        <div class="relative grid grid-cols-2 gap-12 items-center">
-          <div class="text-right">
-            <p class="text-sm text-gray-500">19:00</p>
-            <p class="font-semibold">Dinner & Games</p>
-            <img src="assets/timeline/dinner.png" alt="" class="w-8 h-8 inline-block mt-1">
-          </div>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-          <div></div>
-        </div>
-
-        <!-- Row 6 (right) -->
-        <div class="relative grid grid-cols-2 gap-12 items-center">
-          <div></div>
-          <div>
-            <p class="text-sm text-gray-500">21:00 – 01:00</p>
-            <p class="font-semibold">Party</p>
-            <img src="assets/timeline/party.png" alt="" class="w-8 h-8 inline-block mt-1">
-          </div>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-        </div>
-
-        <!-- Row 7 (left) -->
-        <div class="relative grid grid-cols-2 gap-12 items-center">
-          <div class="text-right">
-            <p class="text-sm text-gray-500">09:00 (29.10.)</p>
-            <p class="font-semibold">Breakfast & Check-out</p>
-            <img src="assets/timeline/breakfast.png" alt="" class="w-8 h-8 inline-block mt-1">
-          </div>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-          <div></div>
-        </div>
-
-        <!-- Row 8 (right) -->
-        <div class="relative grid grid-cols-2 gap-12 items-center">
-          <div></div>
-          <div>
-            <p class="text-sm text-gray-500">11:00 (29.10.)</p>
-            <p class="font-semibold">Departure back to Hanoi</p>
-            <img src="assets/timeline/bus.png" alt="" class="w-8 h-8 inline-block mt-1">
-          </div>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-        </div>
+  <div class="space-y-14">
+    <!-- Row 1 (left) -->
+    <div class="relative grid grid-cols-2 gap-12 items-center">
+      <div class="text-right">
+        <p class="text-sm text-gray-500">09:00</p>
+        <p class="font-semibold">Departure (Hanoi → Hạ Long)</p>
+        <img src="assets/timeline/bus.png" alt="" class="w-8 h-8 inline-block mt-1">
       </div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white z-10"></div>
+      <div></div>
     </div>
+
+    <!-- Row 2 (right) -->
+    <div class="relative grid grid-cols-2 gap-12 items-center">
+      <div></div>
+      <div>
+        <p class="text-sm text-gray-500">12:00</p>
+        <p class="font-semibold">Check-in – Victoria Villas</p>
+        <img src="assets/timeline/checkin.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white z-10"></div>
+    </div>
+
+    <!-- Row 3 (left) -->
+    <div class="relative grid grid-cols-2 gap-12 items-center">
+      <div class="text-right">
+        <p class="text-sm text-gray-500">16:00</p>
+        <p class="font-semibold">Reception – Drinks, Coffee & Snacks</p>
+        <img src="assets/timeline/reception.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white z-10"></div>
+      <div></div>
+    </div>
+
+    <!-- Row 4 (right) -->
+    <div class="relative grid grid-cols-2 gap-12 items-center">
+      <div></div>
+      <div>
+        <p class="text-sm text-gray-500">17:00</p>
+        <p class="font-semibold">Ceremony</p>
+        <img src="assets/timeline/ceremony.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white z-10"></div>
+    </div>
+
+    <!-- Row 5 (left) -->
+    <div class="relative grid grid-cols-2 gap-12 items-center">
+      <div class="text-right">
+        <p class="text-sm text-gray-500">19:00</p>
+        <p class="font-semibold">Dinner & Games</p>
+        <img src="assets/timeline/dinner.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white z-10"></div>
+      <div></div>
+    </div>
+
+    <!-- Row 6 (right) -->
+    <div class="relative grid grid-cols-2 gap-12 items-center">
+      <div></div>
+      <div>
+        <p class="text-sm text-gray-500">21:00 – 01:00</p>
+        <p class="font-semibold">Party</p>
+        <img src="assets/timeline/party.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white z-10"></div>
+    </div>
+
+    <!-- Row 7 (left) -->
+    <div class="relative grid grid-cols-2 gap-12 items-center">
+      <div class="text-right">
+        <p class="text-sm text-gray-500">09:00 (29.10.)</p>
+        <p class="font-semibold">Breakfast & Check-out</p>
+        <img src="assets/timeline/breakfast.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white z-10"></div>
+      <div></div>
+    </div>
+
+    <!-- Row 8 (right) -->
+    <div class="relative grid grid-cols-2 gap-12 items-center">
+      <div></div>
+      <div>
+        <p class="text-sm text-gray-500">11:00 (29.10.)</p>
+        <p class="font-semibold">Departure back to Hanoi</p>
+        <img src="assets/timeline/bus.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white z-10"></div>
+    </div>
+  </div>
+</div>
+
   </div>
 
   <!-- COLLAPSIBLE DETAILS SECOND -->
