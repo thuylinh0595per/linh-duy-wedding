@@ -174,7 +174,7 @@
     <div class="text-right pr-10">
       <div class="inline-flex items-center gap-3">
         <div class="text-right">
-          <p class="font-semibold">Goodbye 👋</p>
+          <p class="font-semibold">Goodbye</p>
           <p class="text-sm text-gray-600">from ~13:00</p>
         </div>
         <img src="assets/timeline/goodbye.png" alt="Goodbye icon" class="w-9 h-9">
@@ -356,10 +356,21 @@
     <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded"></div>
 
     <!-- Vertikale Labels (optional) -->
-    <span class="hidden md:block absolute left-1/2 -translate-x-1/2 top-[34%] text-[10px] tracking-widest text-[var(--sage-700)]"
-          style="writing-mode:vertical-rl; opacity:.8;">IDLE&nbsp;TIME</span>
-    <span class="hidden md:block absolute left-1/2 -translate-x-1/2 top-[72%] text-[10px] tracking-widest text-[var(--sage-700)]"
-          style="writing-mode:vertical-rl; opacity:.8;">RESTING&nbsp;TIME</span>
+    <!-- Vertikale Labels: rechts der Linie, gut lesbar -->
+  <span
+    class="hidden md:block absolute left-1/2 translate-x-5 top-[34%] z-10
+          text-[10px] tracking-widest text-[var(--sage-700)] bg-white/95 px-1 rounded"
+    style="writing-mode:vertical-rl; opacity:.9;">
+    IDLE&nbsp;TIME
+  </span>
+
+  <span
+    class="hidden md:block absolute left-1/2 translate-x-5 top-[72%] z-10
+          text-[10px] tracking-widest text-[var(--sage-700)] bg-white/95 px-1 rounded"
+    style="writing-mode:vertical-rl; opacity:.9;">
+    RESTING&nbsp;TIME
+  </span>
+
 
     <div class="space-y-12">
       <!-- Row 1 (links) -->
