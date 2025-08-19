@@ -54,6 +54,9 @@
     /* Details/Summary Styling */
     details summary { list-style: none; }
     details summary::-webkit-details-marker { display: none; }
+        /* nicer spacing for <details> */
+    details > summary { margin-bottom: .5rem; }           /* when closed */
+    details[open] > summary { margin-bottom: 1rem; }      /* when opened */
 
   </style>
 </head>
@@ -142,7 +145,8 @@
       </p>
     </div>
     <!-- Desktop & Tablet: two-column timeline -->
-    <div class="hidden md:grid grid-cols-2 gap-8 relative">
+    <div class="hidden md:grid grid-cols-2 gap-8 relative mt-10">
+
       <!-- vertical line -->
       <span aria-hidden="true"
             class="absolute left-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded-full -translate-x-1/2"></span>
@@ -185,7 +189,9 @@
     </div>
 
     <!-- Mobile: single column, NO dots -->
-    <ol class="md:hidden relative border-l-2 border-[var(--sage-700)] pl-8 space-y-7">
+    <ol class="md:hidden relative border-l-2 border-[var(--sage-700)] pl-8 space-y-7 mt-6">
+
+
       <li>
         <div class="flex items-start gap-4">
           <img src="assets/timeline/arrival.png" alt="" class="w-8 h-8 mt-[1px] shrink-0">
@@ -217,21 +223,22 @@
   </div>
 
   <!-- COLLAPSIBLE DETAILS SECOND -->
-  <details class="mt-6 group">
-    <summary class="btn w-full justify-between">
+  <details class="mt-8 group">
+    <summary class="btn w-full justify-between mb-4">
       <span>More details</span>
       <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
       </svg>
     </summary>
-    <ul class="list-none text-gray-700">
-        <li><strong>10:30 – 11:00 AM:</strong> You and the other guests arrive and mingle; Time to find your seats at the beautiful wedding center.</li>
-        <li><strong>11:30 AM:</strong> The ceremony begins, followed by a festive lunch.</li>
-        <li><strong>1:00 PM:</strong> The celebration concludes. Time for the bride and groom to eat!</li>
-      </ul>
 
-    
+    <!-- added mt-2 + space-y-2 -->
+    <ul class="list-none text-gray-700 mt-2 space-y-2">
+      <li><strong>10:30 – 11:00 AM:</strong> You and the other guests arrive and mingle; Time to find your seats at the beautiful wedding center.</li>
+      <li><strong>11:30 AM:</strong> The ceremony begins, followed by a festive lunch.</li>
+      <li><strong>1:00 PM:</strong> The celebration concludes. Time for the bride and groom to eat!</li>
+    </ul>
   </details>
+
 </article>
 
 
@@ -269,7 +276,8 @@
       
     </div>
     <!-- Mobile: single-column, NO dots -->
-    <ol class="md:hidden relative border-l-2 border-[var(--sage-700)] pl-7 space-y-7">
+    <ol class="md:hidden relative border-l-2 border-[var(--sage-700)] pl-8 space-y-7 mt-6">
+
       <li>
         <div class="flex items-start gap-4">
           <img src="assets/timeline/bus.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
@@ -345,7 +353,8 @@
     </ol>
 
     <!-- Desktop: middle line + alternating -->
-    <div class="hidden md:block relative max-w-4xl mx-auto">
+  <div class="hidden md:grid grid-cols-2 gap-8 relative mt-10">
+
       <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded"></div>
 
       <div class="space-y-12">
@@ -441,14 +450,14 @@
   </div>
 
   <!-- COLLAPSIBLE DETAILS SECOND -->
-  <details class="mt-6 group">
-    <summary class="btn w-full justify-between">
-      <span>More details</span>
-      <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
-      </svg>
-    </summary>
-    <ul class="list-none text-gray-700">
+  <details class="mt-8 group">
+  <summary class="btn w-full justify-between mb-4">
+    <span>More details</span>
+    <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+    </svg>
+  </summary>
+   <ul class="list-none text-gray-700 mt-2 space-y-2">
         <li><strong>9:00 AM:</strong> Our bus from Hanoi’s ready — join everyone or make your own adventure! 😉 (Meeting point: tba)</li>
         <li><strong>12:00 PM:</strong> Check-in at Victoria Villas - Welcome to your (hopefully fancy) dorm!</li>
         <li class="mt-2 mb-2"><strong>After Check-in = Idle time:</strong> Free time to rest, enjoy the pool or beach, and get lunch, whenever you feel like it.</li>
@@ -459,8 +468,8 @@
         <li><strong>9:00 PM - 1:00 AM:</strong> Music up, shoes off, and dance like nobody’s watching!</li>
       </ul>
 
-      <h4 class="font-semibold text-[var(--sage-700)]">Wednesday, October 29, 2025</h4>
-      <ul class="list-none text-gray-700">
+      <h4 class="font-semibold text-[var(--sage-700)] mt-6">Wednesday, October 29, 2025</h4>
+      <ul class="list-none text-gray-700 mt-2 space-y-2">
         <li><strong>9:00 AM:</strong> Good morning breakfast with beautiful people & Check-out.</li>
         <li><strong>11:00 AM:</strong> It is time for our bus to take us back to Hanoi.</li>
       </ul>
