@@ -51,6 +51,10 @@
     .card{ background:#fff; border:1px solid #e9e9e9; border-radius:0.75rem; padding:1.5rem; box-shadow:0 6px 18px rgba(0,0,0,.05); }
     .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:var(--sage-700); color:#fff; padding:.9rem 1.25rem; border-radius:9999px; font-weight:700; box-shadow:0 8px 20px rgba(129,145,113,.35); transition:transform .15s, background .2s; }
     .btn:hover{ background:var(--sage-600); transform:translateY(-2px); }
+    /* Details/Summary Styling */
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+
   </style>
 </head>
 <body>
@@ -113,344 +117,355 @@
       <h2 class="text-center text-4xl mb-10">Our Celebrations</h2>
 
       <article class="card mb-8" aria-labelledby="wed-title">
-        <h3 id="wed-title" class="text-3xl text-[var(--sage-700)]">The Wedding Day</h3>
-        <div class="mt-3 space-y-3">
-          <p class="text-gray-700">
-            <strong>Location:</strong>
-            <a class="underline text-[var(--sage-700)]" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/7EH5RYmL2kqfZmhs9">
-              Star Galaxy Wedding Center, Hanoi
-            </a>
-          </p>
-          <p class="font-semibold text-[var(--sage-600)]">Saturday, October 25, 2025</p>
-        </div>
-        <p class="mt-4"><strong>Dress code:</strong> Formal Attire</p>
-        <ul class="list-none mt-3 text-gray-700">
-          <li><strong>10:30 – 11:00 AM:</strong> You and the other guests arrive and mingle; Time to find your seats at the beautiful wedding center.</li>
-          <li><strong>11:30 AM:</strong> The ceremony begins, followed by a festive lunch.</li>
-          <li><strong>1:00 PM:</strong> The celebration concludes. Time for the bride and groom to eat!</li>
-        </ul>
-        <p class="mt-4 text-gray-700">
-          Get ready for a wedding with pho-nomenal vibes! <br>
-          In Vietnam, this wedding event is one thing above all else: Joyful! A special moment of two families coming together (+200 other guests, or at least at our wedding).
-        </p>
-        <!-- Wedding Day Timeline -->
-<div class="mt-8" aria-labelledby="wed-timeline-title">
-  <h4 id="wed-timeline-title" class="text-xl font-semibold text-[var(--sage-700)] mb-4">
-    Wedding Day – Timeline (at-a-glance)
-  </h4>
+  <h3 id="wed-title" class="text-3xl text-[var(--sage-700)]">The Wedding Day</h3>
 
-  <!-- Desktop & Tablet: two-column timeline -->
-  <div class="hidden md:grid grid-cols-2 gap-8 relative">
-    <!-- vertical line -->
-    <span aria-hidden="true"
-          class="absolute left-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded-full -translate-x-1/2"></span>
+  <!-- TIMELINE FIRST -->
+  <div class="mt-6" aria-labelledby="wed-timeline-title">
+    <h4 id="wed-timeline-title" class="text-xl font-semibold text-[var(--sage-700)] mb-4">
+      Wedding Day – Timeline (at-a-glance)
+    </h4>
 
-    <!-- 1: Arrival (left) -->
-    <div class="text-right pr-10">
-      <div class="inline-flex items-center gap-3">
-        <div class="text-right">
-          <p class="font-semibold">Arrival & Mingle</p>
-          <p class="text-sm text-gray-600">10:30 – 11:00</p>
-        </div>
-        <!-- your icon -->
-        <img src="assets/timeline/arrival.png" alt="Arrival icon" class="w-9 h-9">
-      </div>
-    </div>
-    <div></div>
+    <!-- Desktop & Tablet: two-column timeline -->
+    <div class="hidden md:grid grid-cols-2 gap-8 relative">
+      <!-- vertical line -->
+      <span aria-hidden="true"
+            class="absolute left-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded-full -translate-x-1/2"></span>
 
-    <!-- 2: Ceremony/Lunch (right) -->
-    <div></div>
-    <div class="pl-10">
-      <div class="inline-flex items-center gap-3">
-        <img src="assets/timeline/ceremony-lunch.png" alt="Ceremony & Lunch icon" class="w-9 h-9">
-        <div>
-          <p class="font-semibold">Ceremony & Lunch</p>
-          <p class="text-sm text-gray-600">11:30 – 13:00</p>
+      <!-- 1: Arrival (left) -->
+      <div class="text-right pr-10">
+        <div class="inline-flex items-center gap-3">
+          <div class="text-right">
+            <p class="font-semibold">Arrival & Mingle</p>
+            <p class="text-sm text-gray-600">10:30 – 11:00</p>
+          </div>
+          <img src="assets/timeline/arrival.png" alt="Arrival icon" class="w-9 h-9">
         </div>
       </div>
+      <div></div>
+
+      <!-- 2: Ceremony/Lunch (right) -->
+      <div></div>
+      <div class="pl-10">
+        <div class="inline-flex items-center gap-3">
+          <img src="assets/timeline/ceremony-lunch.png" alt="Ceremony & Lunch icon" class="w-9 h-9">
+          <div>
+            <p class="font-semibold">Ceremony & Lunch</p>
+            <p class="text-sm text-gray-600">11:30 – 13:00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Goodbye (left) -->
+      <div class="text-right pr-10">
+        <div class="inline-flex items-center gap-3">
+          <div class="text-right">
+            <p class="font-semibold">Goodbye</p>
+            <p class="text-sm text-gray-600">from ~13:00</p>
+          </div>
+          <img src="assets/timeline/goodbye.png" alt="Goodbye icon" class="w-9 h-9">
+        </div>
+      </div>
+      <div></div>
     </div>
 
-    <!-- 3: Goodbye (left) -->
-    <div class="text-right pr-10">
-      <div class="inline-flex items-center gap-3">
-        <div class="text-right">
-          <p class="font-semibold">Goodbye</p>
-          <p class="text-sm text-gray-600">from ~13:00</p>
+    <!-- Mobile: single column, NO dots -->
+    <ol class="md:hidden relative border-l-2 border-[var(--sage-700)] pl-8 space-y-7">
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/arrival.png" alt="" class="w-8 h-8 mt-[1px] shrink-0">
+          <div>
+            <p class="font-semibold">Arrival & Mingle</p>
+            <p class="text-sm text-gray-600">10:30 – 11:00</p>
+          </div>
         </div>
-        <img src="assets/timeline/goodbye.png" alt="Goodbye icon" class="w-9 h-9">
-      </div>
-    </div>
-    <div></div>
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/ceremony-lunch.png" alt="" class="w-8 h-8 mt-[1px] shrink-0">
+          <div>
+            <p class="font-semibold">Ceremony & Lunch</p>
+            <p class="text-sm text-gray-600">11:30 – 13:00</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/goodbye.png" alt="" class="w-8 h-8 mt-[1px] shrink-0">
+          <div>
+            <p class="font-semibold">Goodbye</p>
+            <p class="text-sm text-gray-600">~13:00</p>
+          </div>
+        </div>
+      </li>
+    </ol>
   </div>
 
-  <!-- Mobile: single column, NO dots (as you prefer) -->
-  <ol class="md:hidden relative border-l-2 border-[var(--sage-700)] pl-8 space-y-7">
-    <!-- 1 -->
-    <li>
-      <div class="flex items-start gap-4">
-        <img src="assets/timeline/arrival.png" alt="" class="w-8 h-8 mt-[1px] shrink-0">
-        <div>
-          <p class="font-semibold">Arrival & Mingle</p>
-          <p class="text-sm text-gray-600">10:30 – 11:00</p>
-        </div>
+  <!-- COLLAPSIBLE DETAILS SECOND -->
+  <details class="mt-6 group">
+    <summary class="btn w-full justify-between">
+      <span>More details</span>
+      <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+      </svg>
+    </summary>
+    <div class="mt-4 space-y-4">
+      <div class="space-y-3">
+        <p class="text-gray-700">
+          <strong>Location:</strong>
+          <a class="underline text-[var(--sage-700)]" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/7EH5RYmL2kqfZmhs9">
+            Star Galaxy Wedding Center, Hanoi
+          </a>
+        </p>
+        <p class="font-semibold text-[var(--sage-600)]">Saturday, October 25, 2025</p>
+        <p><strong>Dress code:</strong> Formal Attire</p>
       </div>
-    </li>
-    <!-- 2 -->
-    <li>
-      <div class="flex items-start gap-4">
-        <img src="assets/timeline/ceremony-lunch.png" alt="" class="w-8 h-8 mt-[1px] shrink-0">
-        <div>
-          <p class="font-semibold">Ceremony & Lunch</p>
-          <p class="text-sm text-gray-600">11:30 – 13:00</p>
-        </div>
-      </div>
-    </li>
-    <!-- 3 -->
-    <li>
-      <div class="flex items-start gap-4">
-        <img src="assets/timeline/goodbye.png" alt="" class="w-8 h-8 mt-[1px] shrink-0">
-        <div>
-          <p class="font-semibold">Goodbye</p>
-          <p class="text-sm text-gray-600">~13:00</p>
-        </div>
-      </div>
-    </li>
-  </ol>
-</div>
 
-      </article>
+      <ul class="list-none text-gray-700">
+        <li><strong>10:30 – 11:00 AM:</strong> You and the other guests arrive and mingle; Time to find your seats at the beautiful wedding center.</li>
+        <li><strong>11:30 AM:</strong> The ceremony begins, followed by a festive lunch.</li>
+        <li><strong>1:00 PM:</strong> The celebration concludes. Time for the bride and groom to eat!</li>
+      </ul>
+
+      <p class="text-gray-700">
+        Get ready for a wedding with pho-nomenal vibes! <br>
+        In Vietnam, this wedding event is one thing above all else: Joyful! A special moment of two families coming together (+200 other guests, or at least at our wedding).
+      </p>
+    </div>
+  </details>
+</article>
+
 
       <article id="afterparty" data-anchor class="card" aria-labelledby="after-title">
-        <h3 id="after-title" class="text-3xl text-[var(--sage-700)]">The Afterparty</h3>
-        <div class="mt-3 space-y-3">
-          <p class="text-gray-700">
-            <strong>Location:</strong>
-            <a class="underline text-[var(--sage-700)]" target="_blank" rel="noopener" href="https://maps.app.goo.gl/sQWkaUGpT5xRC1TcA">Victoria Villas - Tuần Châu, Hạ Long</a>
-          </p>
-          <p class="font-semibold text-[var(--sage-600)]">Tuesday, October 28, 2025</p>
-          <p><strong>Dress code:</strong> Beach Wedding Attire</p>
-          <p class="text-sm text-gray-600 italic">
-            Kindly note on footwear: <br>
-            The Ceremony + Vows will be celebrated directly on sand, so comfortable flats, elegant sandals, or heels up to 3cm are recommended. Dinner will be held on grass in front of the villas, so choose footwear accordingly. 🏖️🌿
-          </p>
+  <h3 id="after-title" class="text-3xl text-[var(--sage-700)]">The Afterparty</h3>
+
+  <!-- TIMELINE FIRST -->
+  <div class="mt-6">
+    <h4 class="text-xl font-semibold text-[var(--sage-700)] mb-4">
+      Afterparty – Timeline (at-a-glance)
+    </h4>
+
+    <!-- Mobile: single-column, NO dots -->
+    <ol class="md:hidden relative border-l-2 border-[var(--sage-700)] pl-7 space-y-7">
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/bus.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
+          <div>
+            <p class="font-semibold">Departure (Hanoi → Hạ Long)</p>
+            <p class="text-sm text-gray-600">09:00</p>
+          </div>
         </div>
-        <ul class="list-none mt-3 text-gray-700">
-          <li><strong>9:00 AM:</strong> Our bus from Hanoi’s ready — join everyone or make your own adventure! 😉 (Meeting point: tba)</li>
-          <li><strong>12:00 PM:</strong> Check-in at Victoria Villas - Welcome to your (hopefully fancy) dorm!</li>
-          <li class="mt-2 mb-2"><strong> After Check-in = Idle time:</strong> Free time to rest, enjoy the pool or beach, and get lunch, whenever you feel like it.</li>
-          <li><strong>4:00 PM:</strong> Kicking off the event w/ Drinks, Coffee, and Snacks - Get ready for: Team Bride vs Team Groom.</li>
-          <li><strong>5:00 PM:</strong> The “I promise” part… try not to cry too much (or at least pretend).</li>
-          <li><strong>6:00 PM:</strong> Time to mingle with a lot of hugging, chatting and photos.</li>
-          <li><strong>7:00 PM:</strong> Dinner, great stories, and games to keep the laughs going. </li>
-          <li><strong>9:00 PM - 1:00 AM:</strong> Music up, shoes off, and dance like nobody’s watching!</li>
-        </ul>
-        <h4 class="font-semibold text-[var(--sage-700)] mt-6">Wednesday, October 29, 2025</h4>
-        <ul class="list-none mt-3 text-gray-700">
-          <li><strong>9:00 AM:</strong> Good morning breakfast with beautiful people & Check-out.</li>
-          <li><strong>11:00 AM:</strong> It is time for our bus to take us back to Hanoi.</li>
-        </ul>
-        <p class="mt-4 text-gray-700">
-          <strong>Important Information for the Afterparty:</strong> We are delighted to cover the one-night accommodation (October 28-29), round-trip bus transport from and back to Hanoi, and all food and drinks during the afterparty. A separate form will be sent to confirm your attendance and travel preferences.
-        </p>
-        <!-- AFTERPARTY TIMELINE (green + custom icons, better mobile spacing) -->
-<div class="mt-10">
-  <h4 class="text-xl font-semibold text-[var(--sage-700)] mb-6">
-    Afterparty - Timeline (at-a-glance)
-  </h4>
-
-  <!-- Mobile: single-column timeline (NO dots) -->
-<ol class="md:hidden relative border-l-2 border-[var(--sage-700)] pl-7 space-y-7">
-  <!-- 1 -->
-  <li>
-    <div class="flex items-start gap-4">
-      <img src="assets/timeline/bus.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
-      <div>
-        <p class="font-semibold">Departure (Hanoi → Hạ Long)</p>
-        <p class="text-sm text-gray-600">09:00</p>
-      </div>
-    </div>
-  </li>
-
-  <!-- 2 -->
-  <li>
-    <div class="flex items-start gap-4">
-      <img src="assets/timeline/checkin.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
-      <div>
-        <p class="font-semibold">Check-in – Victoria Villas</p>
-        <p class="text-sm text-gray-600">12:00</p>
-      </div>
-    </div>
-  </li>
-
-  <!-- 3 -->
-  <li>
-    <div class="flex items-start gap-4">
-      <img src="assets/timeline/reception.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
-      <div>
-        <p class="font-semibold">Reception – Drinks, Coffee & Snacks</p>
-        <p class="text-sm text-gray-600">16:00</p>
-      </div>
-    </div>
-  </li>
-
-  <!-- 4 -->
-  <li>
-    <div class="flex items-start gap-4">
-      <img src="assets/timeline/ceremony.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
-      <div>
-        <p class="font-semibold">Ceremony</p>
-        <p class="text-sm text-gray-600">17:00</p>
-      </div>
-    </div>
-  </li>
-
-  <!-- 5 -->
-  <li>
-    <div class="flex items-start gap-4">
-      <img src="assets/timeline/dinner.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
-      <div>
-        <p class="font-semibold">Dinner & Games</p>
-        <p class="text-sm text-gray-600">19:00</p>
-      </div>
-    </div>
-  </li>
-
-  <!-- 6 -->
-  <li>
-    <div class="flex items-start gap-4">
-      <img src="assets/timeline/party.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
-      <div>
-        <p class="font-semibold">Party</p>
-        <p class="text-sm text-gray-600">21:00 – 01:00</p>
-      </div>
-    </div>
-  </li>
-
-  <!-- 7 -->
-  <li>
-    <div class="flex items-start gap-4">
-      <img src="assets/timeline/breakfast.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
-      <div>
-        <p class="font-semibold">Breakfast & Check-out</p>
-        <p class="text-sm text-gray-600">09:00 (29.10.)</p>
-      </div>
-    </div>
-  </li>
-
-  <!-- 8 -->
-  <li>
-    <div class="flex items-start gap-4">
-      <img src="assets/timeline/bus.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
-      <div>
-        <p class="font-semibold">Departure back to Hanoi</p>
-        <p class="text-sm text-gray-600">11:00 (29.10.)</p>
-      </div>
-    </div>
-  </li>
-</ol>
-
-
-  <!-- Desktop: Mittel-Linie + links/rechts, in Grün -->
-  <div class="hidden md:block relative max-w-4xl mx-auto">
-    <!-- zentrale Linie -->
-    <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded"></div>
-
-
-
-    <div class="space-y-12">
-      <!-- Row 1 (links) -->
-      <div class="relative grid grid-cols-2 gap-12 items-center">
-        <div class="text-right">
-          <p class="text-sm text-gray-500">09:00</p>
-          <p class="font-semibold">Departure (Hanoi → Hạ Long)</p>
-          <img src="assets/timeline/bus.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/checkin.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
+          <div>
+            <p class="font-semibold">Check-in – Victoria Villas</p>
+            <p class="text-sm text-gray-600">12:00</p>
+          </div>
         </div>
-        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-        <div></div>
-      </div>
-
-      <!-- Row 2 (rechts) -->
-      <div class="relative grid grid-cols-2 gap-12 items-center">
-        <div></div>
-        <div>
-          <p class="text-sm text-gray-500">12:00</p>
-          <p class="font-semibold">Check-in – Victoria Villas</p>
-          <img src="assets/timeline/checkin.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/reception.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
+          <div>
+            <p class="font-semibold">Reception – Drinks, Coffee & Snacks</p>
+            <p class="text-sm text-gray-600">16:00</p>
+          </div>
         </div>
-        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-      </div>
-
-      <!-- Row 3 (links) -->
-      <div class="relative grid grid-cols-2 gap-12 items-center">
-        <div class="text-right">
-          <p class="text-sm text-gray-500">16:00</p>
-          <p class="font-semibold">Reception – Drinks, Coffee & Snacks</p>
-          <img src="assets/timeline/reception.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/ceremony.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
+          <div>
+            <p class="font-semibold">Ceremony</p>
+            <p class="text-sm text-gray-600">17:00</p>
+          </div>
         </div>
-        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-        <div></div>
-      </div>
-
-      <!-- Row 4 (rechts) -->
-      <div class="relative grid grid-cols-2 gap-12 items-center">
-        <div></div>
-        <div>
-          <p class="text-sm text-gray-500">17:00</p>
-          <p class="font-semibold">Ceremony</p>
-          <img src="assets/timeline/ceremony.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/dinner.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
+          <div>
+            <p class="font-semibold">Dinner & Games</p>
+            <p class="text-sm text-gray-600">19:00</p>
+          </div>
         </div>
-        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-      </div>
-
-      <!-- Row 5 (links) -->
-      <div class="relative grid grid-cols-2 gap-12 items-center">
-        <div class="text-right">
-          <p class="text-sm text-gray-500">19:00</p>
-          <p class="font-semibold">Dinner & Games</p>
-          <img src="assets/timeline/dinner.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/party.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
+          <div>
+            <p class="font-semibold">Party</p>
+            <p class="text-sm text-gray-600">21:00 – 01:00</p>
+          </div>
         </div>
-        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-        <div></div>
-      </div>
-
-      <!-- Row 6 (rechts) -->
-      <div class="relative grid grid-cols-2 gap-12 items-center">
-        <div></div>
-        <div>
-          <p class="text-sm text-gray-500">21:00 – 01:00</p>
-          <p class="font-semibold">Party</p>
-          <img src="assets/timeline/party.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/breakfast.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
+          <div>
+            <p class="font-semibold">Breakfast & Check-out</p>
+            <p class="text-sm text-gray-600">09:00 (29.10.)</p>
+          </div>
         </div>
-        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-      </div>
-
-      <!-- Row 7 (links) -->
-      <div class="relative grid grid-cols-2 gap-12 items-center">
-        <div class="text-right">
-          <p class="text-sm text-gray-500">09:00 (29.10.)</p>
-          <p class="font-semibold">Breakfast & Check-out</p>
-          <img src="assets/timeline/breakfast.png" alt="" class="w-8 h-8 inline-block mt-1">
+      </li>
+      <li>
+        <div class="flex items-start gap-4">
+          <img src="assets/timeline/bus.png" alt="" class="w-7 h-7 mt-[-2px] shrink-0">
+          <div>
+            <p class="font-semibold">Departure back to Hanoi</p>
+            <p class="text-sm text-gray-600">11:00 (29.10.)</p>
+          </div>
         </div>
-        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
-        <div></div>
-      </div>
+      </li>
+    </ol>
 
-      <!-- Row 8 (rechts) -->
-      <div class="relative grid grid-cols-2 gap-12 items-center">
-        <div></div>
-        <div>
-          <p class="text-sm text-gray-500">11:00 (29.10.)</p>
-          <p class="font-semibold">Departure back to Hanoi</p>
-          <img src="assets/timeline/bus.png" alt="" class="w-8 h-8 inline-block mt-1">
+    <!-- Desktop: middle line + alternating -->
+    <div class="hidden md:block relative max-w-4xl mx-auto">
+      <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-[var(--sage-700)] rounded"></div>
+
+      <div class="space-y-12">
+        <!-- Row 1 (left) -->
+        <div class="relative grid grid-cols-2 gap-12 items-center">
+          <div class="text-right">
+            <p class="text-sm text-gray-500">09:00</p>
+            <p class="font-semibold">Departure (Hanoi → Hạ Long)</p>
+            <img src="assets/timeline/bus.png" alt="" class="w-8 h-8 inline-block mt-1">
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+          <div></div>
         </div>
-        <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+
+        <!-- Row 2 (right) -->
+        <div class="relative grid grid-cols-2 gap-12 items-center">
+          <div></div>
+          <div>
+            <p class="text-sm text-gray-500">12:00</p>
+            <p class="font-semibold">Check-in – Victoria Villas</p>
+            <img src="assets/timeline/checkin.png" alt="" class="w-8 h-8 inline-block mt-1">
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+        </div>
+
+        <!-- Row 3 (left) -->
+        <div class="relative grid grid-cols-2 gap-12 items-center">
+          <div class="text-right">
+            <p class="text-sm text-gray-500">16:00</p>
+            <p class="font-semibold">Reception – Drinks, Coffee & Snacks</p>
+            <img src="assets/timeline/reception.png" alt="" class="w-8 h-8 inline-block mt-1">
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+          <div></div>
+        </div>
+
+        <!-- Row 4 (right) -->
+        <div class="relative grid grid-cols-2 gap-12 items-center">
+          <div></div>
+          <div>
+            <p class="text-sm text-gray-500">17:00</p>
+            <p class="font-semibold">Ceremony</p>
+            <img src="assets/timeline/ceremony.png" alt="" class="w-8 h-8 inline-block mt-1">
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+        </div>
+
+        <!-- Row 5 (left) -->
+        <div class="relative grid grid-cols-2 gap-12 items-center">
+          <div class="text-right">
+            <p class="text-sm text-gray-500">19:00</p>
+            <p class="font-semibold">Dinner & Games</p>
+            <img src="assets/timeline/dinner.png" alt="" class="w-8 h-8 inline-block mt-1">
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+          <div></div>
+        </div>
+
+        <!-- Row 6 (right) -->
+        <div class="relative grid grid-cols-2 gap-12 items-center">
+          <div></div>
+          <div>
+            <p class="text-sm text-gray-500">21:00 – 01:00</p>
+            <p class="font-semibold">Party</p>
+            <img src="assets/timeline/party.png" alt="" class="w-8 h-8 inline-block mt-1">
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+        </div>
+
+        <!-- Row 7 (left) -->
+        <div class="relative grid grid-cols-2 gap-12 items-center">
+          <div class="text-right">
+            <p class="text-sm text-gray-500">09:00 (29.10.)</p>
+            <p class="font-semibold">Breakfast & Check-out</p>
+            <img src="assets/timeline/breakfast.png" alt="" class="w-8 h-8 inline-block mt-1">
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+          <div></div>
+        </div>
+
+        <!-- Row 8 (right) -->
+        <div class="relative grid grid-cols-2 gap-12 items-center">
+          <div></div>
+          <div>
+            <p class="text-sm text-gray-500">11:00 (29.10.)</p>
+            <p class="font-semibold">Departure back to Hanoi</p>
+            <img src="assets/timeline/bus.png" alt="" class="w-8 h-8 inline-block mt-1">
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[var(--sage-700)] ring-4 ring-white"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <!-- COLLAPSIBLE DETAILS SECOND -->
+  <details class="mt-6 group">
+    <summary class="btn w-full justify-between">
+      <span>More details</span>
+      <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
+      </svg>
+    </summary>
+    <div class="mt-4 space-y-4">
+      <div class="space-y-3">
+        <p class="text-gray-700">
+          <strong>Location:</strong>
+          <a class="underline text-[var(--sage-700)]" target="_blank" rel="noopener" href="https://maps.app.goo.gl/sQWkaUGpT5xRC1TcA">
+            Victoria Villas - Tuần Châu, Hạ Long
+          </a>
+        </p>
+        <p class="font-semibold text-[var(--sage-600)]">Tuesday, October 28, 2025</p>
+        <p><strong>Dress code:</strong> Beach Wedding Attire</p>
+        <p class="text-sm text-gray-600 italic">
+          Kindly note on footwear: <br>
+          The Ceremony + Vows will be celebrated directly on sand, so comfortable flats, elegant sandals, or heels up to 3cm are recommended.
+          Dinner will be held on grass in front of the villas, so choose footwear accordingly. 🏖️🌿
+        </p>
+      </div>
 
-      </article>
+      <ul class="list-none text-gray-700">
+        <li><strong>9:00 AM:</strong> Our bus from Hanoi’s ready — join everyone or make your own adventure! 😉 (Meeting point: tba)</li>
+        <li><strong>12:00 PM:</strong> Check-in at Victoria Villas - Welcome to your (hopefully fancy) dorm!</li>
+        <li class="mt-2 mb-2"><strong>After Check-in = Idle time:</strong> Free time to rest, enjoy the pool or beach, and get lunch, whenever you feel like it.</li>
+        <li><strong>4:00 PM:</strong> Kicking off the event w/ Drinks, Coffee, and Snacks - Get ready for: Team Bride vs Team Groom.</li>
+        <li><strong>5:00 PM:</strong> The “I promise” part… try not to cry too much (or at least pretend).</li>
+        <li><strong>6:00 PM:</strong> Time to mingle with a lot of hugging, chatting and photos.</li>
+        <li><strong>7:00 PM:</strong> Dinner, great stories, and games to keep the laughs going.</li>
+        <li><strong>9:00 PM - 1:00 AM:</strong> Music up, shoes off, and dance like nobody’s watching!</li>
+      </ul>
+
+      <h4 class="font-semibold text-[var(--sage-700)]">Wednesday, October 29, 2025</h4>
+      <ul class="list-none text-gray-700">
+        <li><strong>9:00 AM:</strong> Good morning breakfast with beautiful people & Check-out.</li>
+        <li><strong>11:00 AM:</strong> It is time for our bus to take us back to Hanoi.</li>
+      </ul>
+
+      <p class="text-gray-700">
+        <strong>Important Information for the Afterparty:</strong> We are delighted to cover the one-night accommodation (October 28–29), round-trip bus transport from and back to Hanoi, and all food and drinks during the afterparty.
+        A separate form will be sent to confirm your attendance and travel preferences.
+      </p>
+    </div>
+  </details>
+</article>
+
     </div>
   </section>
 
