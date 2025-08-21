@@ -94,7 +94,7 @@
                 max-h-[calc(100dvh-var(--header-h))] overflow-y-auto">
         <ul class="flex flex-col py-2">
           <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#events">Wedding Day</a></li>
-          <li><a class="px-4 py-2 rounded-full hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#ideas">Ideas (Oct 26–27)</a></li>
+          <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#ideas">Ideas (Oct 26–27)</a></li>
           <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="#afterparty">Afterparty</a></li>
           <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="travel.html">Travel Tips</a></li>
           <li><a class="block px-4 py-3 hover:bg-[var(--sage-600)] hover:text-white font-semibold" href="guide.html">Vietnam Guide</a></li>
@@ -250,12 +250,13 @@
   </div>
 </article>
 
-  <!-- IDEAS FOR YOUR FREE DAYS (Oct 26–27) -->
-<section id="ideas" data-anchor class="py-12">
-  <div class="max-w-5xl mx-auto px-4">
-    <details class="card group">
+<article id="ideas" data-anchor class="card mb-8" aria-labelledby="ideas-title">
+  <div class="mx-auto max-w-4xl">
+    <h3 id="ideas-title" class="text-3xl text-[var(--sage-700)]">Ideas for Oct 26–27</h3>
+
+    <details class="group mt-6">
       <summary class="btn w-full justify-between">
-        <span>Ideas for Oct 26–27 (2 free days)</span>
+        <span>See recommendations</span>
         <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/>
         </svg>
@@ -265,7 +266,7 @@
         Here are easy, flexible options you can do on your own or in small groups. Tap a card to see details.
       </p>
 
-      <!-- Ideas grid -->
+      <!-- Ideas grid (unchanged content from your section) -->
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <!-- 1 -->
         <details class="card p-4">
@@ -411,7 +412,8 @@
       </p>
     </details>
   </div>
-</section>
+</article>
+
 
       <article id="afterparty" data-anchor class="card mb-8" aria-labelledby="after-title">
   <div class="mx-auto max-w-4xl">
